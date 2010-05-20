@@ -7,7 +7,7 @@
   </p>
   <p>
     <%= f.label :parent_id %><br />
-    <%= f.select :parent_id, options_for_select(Pokemon.all.map{|pokemon| [pokemon.name, pokemon.id]} ) %>
+    <%= f.select :parent_id, options_for_select([[nil, nil]] + Pokemon.all.map{|pokemon| [pokemon.name, pokemon.id]} ) %>
   </p>
   <p>
     <%= f.submit 'Create' %>
