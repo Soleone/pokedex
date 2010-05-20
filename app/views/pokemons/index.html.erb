@@ -1,0 +1,19 @@
+<h1>Listing pokemons</h1>
+
+<% @pokemons.each do |pokemon| %>
+<div class="pokemon">
+  <h2><%= pokemon.name %></h2>
+  <p>
+    <% if pokemon.parent %>
+    Parent: <%= pokemon.parent.name %>
+    <% end %>
+  </p>
+  <ul class="actions">
+    <li><%= link_to 'Show', pokemon %> | </li>
+    <li><%= link_to 'Edit', edit_pokemon_path(pokemon) %> | </li>
+    <li><%= link_to 'Destroy', pokemon, :confirm => 'Are you sure?', :method => :delete %></li>
+  </ul>
+</div>
+<% end %>
+
+<%= link_to 'New pokemon', new_pokemon_path %>

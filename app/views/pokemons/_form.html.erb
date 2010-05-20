@@ -1,0 +1,15 @@
+<% form_for(pokemon) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :parent_id %><br />
+    <%= f.select :parent_id, options_for_select(Pokemon.all.map{|pokemon| [pokemon.name, pokemon.id]} ) %>
+  </p>
+  <p>
+    <%= f.submit 'Create' %>
+  </p>
+<% end %>
